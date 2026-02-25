@@ -29,14 +29,14 @@ const featuredServices = [
     price: "from $55",
     description:
       "Get those fluffy, feathered brows you've been dreaming of. Includes shaping and styling.",
-    image: "/images/erika/ig-07.jpg",
+    image: "/images/erika/ig-14.jpg",
   },
   {
     title: "Full Face Waxing",
     price: "$50",
     description:
       "Complete facial hair removal for smooth, flawless skin. Brows, upper lip, and chin.",
-    image: "/images/erika/ig-06.jpg",
+    image: "/images/erika/ig-08.jpg",
   },
 ];
 
@@ -68,14 +68,16 @@ const reviews = [
 ];
 
 const galleryImages = [
-  { src: "/images/erika/ig-14.jpg", alt: "Before & after brow wax + tint" },
-  { src: "/images/erika/ig-04.jpg", alt: "Lash lift & brow lamination" },
+  { src: "/images/erika/ig-14.jpg", alt: "Brow lamination before & after" },
+  { src: "/images/erika/ig-02.jpg", alt: "Lash lift before & after" },
+  { src: "/images/erika/ig-04.jpg", alt: "Brow lamination results" },
   { src: "/images/erika/ig-11.jpg", alt: "Beautiful brows & lifted lashes" },
-  { src: "/images/erika/ig-03.jpg", alt: "Lash lift before & after" },
+  { src: "/images/erika/ig-03.jpg", alt: "Lash lift transformation" },
+  { src: "/images/erika/ig-07.jpg", alt: "Brow lamination before & after" },
   { src: "/images/erika/ig-12.jpg", alt: "Brow transformation" },
+  { src: "/images/erika/ig-16.jpg", alt: "Lash lift result" },
   { src: "/images/erika/ig-09.jpg", alt: "Brow work results" },
-  { src: "/images/erika-fb/fb-01.jpg", alt: "Erika's studio workspace" },
-  { src: "/images/erika-fb/fb-03.jpg", alt: "Client results" },
+  { src: "/images/erika/ig-10.jpg", alt: "Brow styling result" },
 ];
 
 export default function HomePage() {
