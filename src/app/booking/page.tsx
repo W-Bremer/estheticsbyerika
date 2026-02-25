@@ -4,13 +4,11 @@ import { useState } from "react";
 import PageHero from "@/components/PageHero";
 import {
   ChevronRight,
-  ChevronLeft,
   Check,
   Calendar,
   User,
   Sparkles,
   Phone,
-  Clock,
 } from "lucide-react";
 
 const services = [
@@ -116,44 +114,44 @@ export default function BookingPage() {
     return (
       <>
         <PageHero badge="Booking" title="Booking Confirmed!" />
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-cream">
           <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="w-20 h-20 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-8">
-              <Check size={40} className="text-success" />
+            <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-8">
+              <Check size={40} className="text-gold" />
             </div>
-            <h2 className="font-heading text-3xl font-bold text-accent mb-4">
+            <h2 className="font-heading text-3xl text-brown-dark mb-4">
               Thank You, {formData.firstName}!
             </h2>
-            <p className="text-accent/60 text-lg mb-8 leading-relaxed">
+            <p className="text-brown-dark/60 text-lg mb-8 leading-relaxed">
               Your appointment request has been received. Erika will confirm your
               booking via text or email within a few hours.
             </p>
-            <div className="bg-secondary rounded-2xl p-8 text-left space-y-4 mb-8">
-              <h3 className="font-heading text-lg font-bold text-accent">
+            <div className="bg-white rounded-2xl p-8 text-left space-y-4 mb-8 border border-beige/30">
+              <h3 className="font-heading text-lg text-brown-dark">
                 Appointment Summary
               </h3>
               <div className="space-y-2">
                 {selectedItems.map((item) => (
                   <div key={item.name} className="flex justify-between text-sm">
-                    <span className="text-accent/70">{item.name}</span>
-                    <span className="font-semibold text-accent">${item.price}</span>
+                    <span className="text-brown-dark/70">{item.name}</span>
+                    <span className="font-semibold text-brown-dark">${item.price}</span>
                   </div>
                 ))}
               </div>
-              <div className="border-t border-highlight/50 pt-3 flex justify-between">
-                <span className="font-semibold text-accent">Total</span>
-                <span className="font-heading text-xl font-bold text-primary">${totalPrice}</span>
+              <div className="border-t border-beige/50 pt-3 flex justify-between">
+                <span className="font-semibold text-brown-dark">Total</span>
+                <span className="font-heading text-xl font-bold text-gold">${totalPrice}</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-accent/60 pt-2">
+              <div className="flex items-center gap-2 text-sm text-brown-dark/50 pt-2">
                 <Calendar size={16} />
                 <span>{selectedDate} at {selectedTime}</span>
               </div>
             </div>
-            <div className="flex items-center justify-center gap-2 text-accent/50 text-sm">
+            <div className="flex items-center justify-center gap-2 text-brown-dark/40 text-sm">
               <Phone size={16} />
               <span>
                 Questions? Call{" "}
-                <a href="tel:+14177662102" className="text-primary font-semibold">(417) 766-2102</a>
+                <a href="tel:+14177662102" className="text-gold font-semibold">(417) 766-2102</a>
               </span>
             </div>
           </div>
@@ -170,7 +168,7 @@ export default function BookingPage() {
         subtitle="Choose your services, pick a time, and we'll take care of the rest."
       />
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-cream">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Progress Steps */}
           <div className="flex items-center justify-center gap-2 sm:gap-4 mb-12">
@@ -180,10 +178,10 @@ export default function BookingPage() {
                   onClick={() => i < step && setStep(i)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                     i === step
-                      ? "bg-primary text-white"
+                      ? "bg-brown-dark text-cream"
                       : i < step
-                      ? "bg-success/10 text-success cursor-pointer"
-                      : "bg-secondary text-accent/40"
+                      ? "bg-gold/10 text-gold cursor-pointer"
+                      : "bg-white text-brown-dark/30 border border-beige/30"
                   }`}
                   disabled={i > step}
                 >
@@ -191,7 +189,7 @@ export default function BookingPage() {
                   <span className="hidden sm:inline">{s.label}</span>
                 </button>
                 {i < stepsConfig.length - 1 && (
-                  <ChevronRight size={16} className="mx-1 sm:mx-2 text-accent/20" />
+                  <ChevronRight size={16} className="mx-1 sm:mx-2 text-beige" />
                 )}
               </div>
             ))}
@@ -200,12 +198,12 @@ export default function BookingPage() {
           {/* Step 1: Service Selection */}
           {step === 0 && (
             <div className="animate-fade-in">
-              <h2 className="font-heading text-2xl font-bold text-accent mb-2">Choose Your Services</h2>
-              <p className="text-accent/50 mb-8">Select one or more services for your visit.</p>
+              <h2 className="font-heading text-2xl text-brown-dark mb-2">Choose Your Services</h2>
+              <p className="text-brown-dark/50 mb-8">Select one or more services for your visit.</p>
 
               {services.map((category) => (
                 <div key={category.category} className="mb-10">
-                  <h3 className="font-heading text-lg font-bold text-accent mb-4">{category.category}</h3>
+                  <h3 className="font-heading text-lg text-brown-dark mb-4">{category.category}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {category.items.map((item) => {
                       const isSelected = selectedServices.includes(item.name);
@@ -215,24 +213,24 @@ export default function BookingPage() {
                           onClick={() => toggleService(item.name)}
                           className={`flex items-center justify-between p-4 rounded-xl border-2 text-left transition-all duration-200 ${
                             isSelected
-                              ? "border-primary bg-primary/5"
-                              : "border-highlight/50 hover:border-primary/30"
+                              ? "border-gold bg-gold/5"
+                              : "border-beige/50 hover:border-gold/30 bg-white"
                           }`}
                         >
                           <div className="flex items-center gap-3">
                             <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
-                              isSelected ? "border-primary bg-primary" : "border-accent/20"
+                              isSelected ? "border-gold bg-gold" : "border-brown-dark/20"
                             }`}>
-                              {isSelected && <Check size={12} className="text-white" />}
+                              {isSelected && <Check size={12} className="text-brown-dark" />}
                             </div>
                             <div>
-                              <p className="font-medium text-accent text-sm">{item.name}</p>
-                              <p className="text-accent/40 text-xs flex items-center gap-1">
-                                <Clock size={10} /> {item.duration}
+                              <p className="font-medium text-brown-dark text-sm">{item.name}</p>
+                              <p className="text-brown-dark/40 text-xs flex items-center gap-1">
+                                {item.duration}
                               </p>
                             </div>
                           </div>
-                          <span className="font-heading font-bold text-primary">${item.price}</span>
+                          <span className="font-heading font-bold text-gold">${item.price}</span>
                         </button>
                       );
                     })}
@@ -241,12 +239,12 @@ export default function BookingPage() {
               ))}
 
               {selectedServices.length > 0 && (
-                <div className="sticky bottom-4 bg-white/95 backdrop-blur-md border border-highlight/50 rounded-xl p-4 shadow-lg flex items-center justify-between">
+                <div className="sticky bottom-4 bg-white/95 backdrop-blur-md border border-beige/50 rounded-xl p-4 shadow-lg flex items-center justify-between">
                   <div>
-                    <p className="text-accent/50 text-sm">{selectedServices.length} service{selectedServices.length > 1 ? "s" : ""} selected</p>
-                    <p className="font-heading text-xl font-bold text-primary">${totalPrice}</p>
+                    <p className="text-brown-dark/50 text-sm">{selectedServices.length} service{selectedServices.length > 1 ? "s" : ""} selected</p>
+                    <p className="font-heading text-xl font-bold text-gold">${totalPrice}</p>
                   </div>
-                  <button onClick={() => setStep(1)} className="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors flex items-center gap-2">
+                  <button onClick={() => setStep(1)} className="bg-brown-dark text-cream px-6 py-3 rounded-full font-semibold hover:bg-brown transition-colors flex items-center gap-2">
                     Continue <ChevronRight size={18} />
                   </button>
                 </div>
@@ -257,28 +255,26 @@ export default function BookingPage() {
           {/* Step 2: Date & Time */}
           {step === 1 && (
             <div className="animate-fade-in">
-              <h2 className="font-heading text-2xl font-bold text-accent mb-2">Pick a Date & Time</h2>
-              <p className="text-accent/50 mb-8">Choose a day and time that works for you.</p>
+              <h2 className="font-heading text-2xl text-brown-dark mb-2">Pick a Date & Time</h2>
+              <p className="text-brown-dark/50 mb-8">Choose a day and time that works for you.</p>
 
               <div className="mb-10">
-                <h3 className="font-semibold text-accent mb-4">Available Dates</h3>
+                <h3 className="font-semibold text-brown-dark mb-4">Available Dates</h3>
                 <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-7 gap-3">
                   {dates.map((date) => {
                     const dateStr = date.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
                     const isSelected = selectedDate === dateStr;
-                    const isSaturday = date.getDay() === 6;
                     return (
                       <button
                         key={dateStr}
                         onClick={() => { setSelectedDate(dateStr); setSelectedTime(""); }}
                         className={`p-3 rounded-xl border-2 text-center transition-all duration-200 ${
-                          isSelected ? "border-primary bg-primary/5" : "border-highlight/50 hover:border-primary/30"
+                          isSelected ? "border-gold bg-gold/5" : "border-beige/50 hover:border-gold/30 bg-white"
                         }`}
                       >
-                        <p className="text-xs text-accent/50 uppercase">{date.toLocaleDateString("en-US", { weekday: "short" })}</p>
-                        <p className="font-bold text-accent mt-1">{date.getDate()}</p>
-                        <p className="text-xs text-accent/40">{date.toLocaleDateString("en-US", { month: "short" })}</p>
-                        {isSaturday && <p className="text-xs text-primary mt-1">Until 2pm</p>}
+                        <p className="text-xs text-brown-dark/40 uppercase">{date.toLocaleDateString("en-US", { weekday: "short" })}</p>
+                        <p className="font-bold text-brown-dark mt-1">{date.getDate()}</p>
+                        <p className="text-xs text-brown-dark/40">{date.toLocaleDateString("en-US", { month: "short" })}</p>
                       </button>
                     );
                   })}
@@ -287,7 +283,7 @@ export default function BookingPage() {
 
               {selectedDate && (
                 <div>
-                  <h3 className="font-semibold text-accent mb-4">Available Times</h3>
+                  <h3 className="font-semibold text-brown-dark mb-4">Available Times</h3>
                   <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-3">
                     {timeSlots.filter((slot) => {
                       if (selectedDate.startsWith("Sat") && (slot.includes("2:30") || slot.includes("3:") || slot.includes("4:"))) return false;
@@ -298,8 +294,8 @@ export default function BookingPage() {
                         onClick={() => setSelectedTime(slot)}
                         className={`py-3 px-2 rounded-lg border-2 text-sm font-medium transition-all duration-200 ${
                           selectedTime === slot
-                            ? "border-primary bg-primary text-white"
-                            : "border-highlight/50 text-accent/70 hover:border-primary/30"
+                            ? "border-gold bg-gold text-brown-dark"
+                            : "border-beige/50 text-brown-dark/70 hover:border-gold/30 bg-white"
                         }`}
                       >
                         {slot}
@@ -314,59 +310,59 @@ export default function BookingPage() {
           {/* Step 3: Client Info */}
           {step === 2 && (
             <div className="animate-fade-in">
-              <h2 className="font-heading text-2xl font-bold text-accent mb-2">Your Information</h2>
-              <p className="text-accent/50 mb-8">Tell us a bit about yourself so we can prepare for your visit.</p>
+              <h2 className="font-heading text-2xl text-brown-dark mb-2">Your Information</h2>
+              <p className="text-brown-dark/50 mb-8">Tell us a bit about yourself so we can prepare for your visit.</p>
 
               <div className="space-y-6 max-w-xl">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-accent mb-1.5">First Name *</label>
+                    <label className="block text-sm font-medium text-brown-dark mb-1.5">First Name *</label>
                     <input
                       type="text"
                       value={formData.firstName}
                       onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-highlight/50 focus:border-primary outline-none transition-colors bg-white"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-beige/50 focus:border-gold outline-none transition-colors bg-white"
                       placeholder="First name"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-accent mb-1.5">Last Name *</label>
+                    <label className="block text-sm font-medium text-brown-dark mb-1.5">Last Name *</label>
                     <input
                       type="text"
                       value={formData.lastName}
                       onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-highlight/50 focus:border-primary outline-none transition-colors bg-white"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-beige/50 focus:border-gold outline-none transition-colors bg-white"
                       placeholder="Last name"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-accent mb-1.5">Phone Number *</label>
+                  <label className="block text-sm font-medium text-brown-dark mb-1.5">Phone Number *</label>
                   <input
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-highlight/50 focus:border-primary outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-beige/50 focus:border-gold outline-none transition-colors bg-white"
                     placeholder="(417) 000-0000"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-accent mb-1.5">Email (optional)</label>
+                  <label className="block text-sm font-medium text-brown-dark mb-1.5">Email (optional)</label>
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-highlight/50 focus:border-primary outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-beige/50 focus:border-gold outline-none transition-colors bg-white"
                     placeholder="you@email.com"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-accent mb-1.5">Notes (optional)</label>
+                  <label className="block text-sm font-medium text-brown-dark mb-1.5">Notes (optional)</label>
                   <textarea
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                     rows={3}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-highlight/50 focus:border-primary outline-none transition-colors bg-white resize-none"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-beige/50 focus:border-gold outline-none transition-colors bg-white resize-none"
                     placeholder="Anything we should know? First time? Skin sensitivities?"
                   />
                 </div>
@@ -377,47 +373,47 @@ export default function BookingPage() {
           {/* Step 4: Confirmation */}
           {step === 3 && (
             <div className="animate-fade-in">
-              <h2 className="font-heading text-2xl font-bold text-accent mb-2">Review & Confirm</h2>
-              <p className="text-accent/50 mb-8">Make sure everything looks good before submitting.</p>
+              <h2 className="font-heading text-2xl text-brown-dark mb-2">Review & Confirm</h2>
+              <p className="text-brown-dark/50 mb-8">Make sure everything looks good before submitting.</p>
 
-              <div className="bg-secondary rounded-2xl p-8 space-y-6 max-w-xl">
+              <div className="bg-white rounded-2xl p-8 space-y-6 max-w-xl border border-beige/30">
                 {/* Services */}
                 <div>
-                  <h3 className="font-semibold text-accent mb-3 flex items-center gap-2">
-                    <Sparkles size={16} className="text-primary" /> Services
+                  <h3 className="font-semibold text-brown-dark mb-3 flex items-center gap-2">
+                    <Sparkles size={16} className="text-gold" /> Services
                   </h3>
                   <div className="space-y-2">
                     {selectedItems.map((item) => (
                       <div key={item.name} className="flex justify-between text-sm">
-                        <span className="text-accent/70">{item.name} <span className="text-accent/40">({item.duration})</span></span>
-                        <span className="font-semibold text-accent">${item.price}</span>
+                        <span className="text-brown-dark/70">{item.name} <span className="text-brown-dark/40">({item.duration})</span></span>
+                        <span className="font-semibold text-brown-dark">${item.price}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="border-t border-highlight/50 mt-3 pt-3 flex justify-between">
-                    <span className="font-semibold text-accent">Total</span>
-                    <span className="font-heading text-xl font-bold text-primary">${totalPrice}</span>
+                  <div className="border-t border-beige/50 mt-3 pt-3 flex justify-between">
+                    <span className="font-semibold text-brown-dark">Total</span>
+                    <span className="font-heading text-xl font-bold text-gold">${totalPrice}</span>
                   </div>
                 </div>
 
                 {/* Date & Time */}
                 <div>
-                  <h3 className="font-semibold text-accent mb-2 flex items-center gap-2">
-                    <Calendar size={16} className="text-primary" /> Date & Time
+                  <h3 className="font-semibold text-brown-dark mb-2 flex items-center gap-2">
+                    <Calendar size={16} className="text-gold" /> Date & Time
                   </h3>
-                  <p className="text-accent/70 text-sm">{selectedDate} at {selectedTime}</p>
+                  <p className="text-brown-dark/70 text-sm">{selectedDate} at {selectedTime}</p>
                 </div>
 
                 {/* Client */}
                 <div>
-                  <h3 className="font-semibold text-accent mb-2 flex items-center gap-2">
-                    <User size={16} className="text-primary" /> Your Info
+                  <h3 className="font-semibold text-brown-dark mb-2 flex items-center gap-2">
+                    <User size={16} className="text-gold" /> Your Info
                   </h3>
-                  <div className="text-accent/70 text-sm space-y-1">
+                  <div className="text-brown-dark/70 text-sm space-y-1">
                     <p>{formData.firstName} {formData.lastName}</p>
                     <p>{formData.phone}</p>
                     {formData.email && <p>{formData.email}</p>}
-                    {formData.notes && <p className="italic text-accent/50">Note: {formData.notes}</p>}
+                    {formData.notes && <p className="italic text-brown-dark/50">Note: {formData.notes}</p>}
                   </div>
                 </div>
               </div>
@@ -426,12 +422,12 @@ export default function BookingPage() {
 
           {/* Navigation Buttons */}
           {step > 0 && (
-            <div className="flex items-center justify-between mt-10 pt-6 border-t border-highlight/30">
+            <div className="flex items-center justify-between mt-10 pt-6 border-t border-beige/30">
               <button
                 onClick={() => setStep(step - 1)}
-                className="flex items-center gap-2 text-accent/60 hover:text-accent font-medium transition-colors"
+                className="flex items-center gap-2 text-brown-dark/50 hover:text-brown-dark font-medium transition-colors"
               >
-                <ChevronLeft size={18} /> Back
+                ← Back
               </button>
 
               {step < 3 ? (
@@ -440,16 +436,16 @@ export default function BookingPage() {
                   disabled={!canProceed()}
                   className={`flex items-center gap-2 px-8 py-3 rounded-full font-semibold transition-all duration-200 ${
                     canProceed()
-                      ? "bg-primary text-white hover:bg-primary-dark"
-                      : "bg-highlight/50 text-accent/30 cursor-not-allowed"
+                      ? "bg-brown-dark text-cream hover:bg-brown"
+                      : "bg-beige/50 text-brown-dark/30 cursor-not-allowed"
                   }`}
                 >
                   Continue <ChevronRight size={18} />
                 </button>
               ) : (
                 <button
-                  onClick={handleSubmit}
-                  className="flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all duration-200"
+                  onClick={() => setSubmitted(true)}
+                  className="flex items-center gap-2 bg-gold text-brown-dark px-8 py-3 rounded-full font-semibold hover:bg-gold-light transition-all duration-200"
                 >
                   <Check size={18} /> Confirm Booking
                 </button>
@@ -460,8 +456,4 @@ export default function BookingPage() {
       </section>
     </>
   );
-
-  function handleSubmit() {
-    setSubmitted(true);
-  }
 }
