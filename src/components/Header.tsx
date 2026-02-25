@@ -45,9 +45,9 @@ export default function Header() {
             <Image 
               src="/images/logo.jpg" 
               alt="Esthetics By Erika" 
-              width={32} 
-              height={32}
-              className="rounded-full object-cover"
+              width={44} 
+              height={44}
+              className="rounded-full object-cover border-2 border-white shadow-lg"
             />
             <span className="font-heading text-xl text-brown-dark group-hover:text-gold transition-colors">
               Esthetics
