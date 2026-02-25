@@ -32,11 +32,11 @@ const featuredServices = [
     image: "/images/erika/ig-07.jpg",
   },
   {
-    title: "Facial Treatment",
-    price: "from $85",
+    title: "Full Face Waxing",
+    price: "$50",
     description:
-      "Customized facials targeting your unique skin concerns. Deep cleansing, hydration, and glow.",
-    image: "/images/hero-2.jpg",
+      "Complete facial hair removal for smooth, flawless skin. Brows, upper lip, and chin.",
+    image: "/images/erika/ig-06.jpg",
   },
 ];
 
@@ -74,6 +74,8 @@ const galleryImages = [
   { src: "/images/erika/ig-03.jpg", alt: "Lash lift before & after" },
   { src: "/images/erika/ig-12.jpg", alt: "Brow transformation" },
   { src: "/images/erika/ig-09.jpg", alt: "Brow work results" },
+  { src: "/images/erika-fb/fb-01.jpg", alt: "Erika's studio workspace" },
+  { src: "/images/erika-fb/fb-03.jpg", alt: "Client results" },
 ];
 
 export default function HomePage() {
