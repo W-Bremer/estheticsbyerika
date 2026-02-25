@@ -43,10 +43,10 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group shrink-0">
             <Image 
-              src="/images/erika/ig-17.jpg" 
+              src="/images/logo.jpg" 
               alt="Esthetics By Erika" 
-              width={35} 
-              height={35}
+              width={32} 
+              height={32}
               className="rounded-full object-cover"
             />
             <span className="font-heading text-xl text-brown-dark group-hover:text-gold transition-colors">
