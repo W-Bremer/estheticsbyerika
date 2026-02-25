@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -40,8 +41,15 @@ export default function Header() {
       >
         <div className="flex items-center justify-between h-16 px-6 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="flex items-baseline gap-1.5 group shrink-0">
-            <span className="font-heading text-2xl text-brown-dark group-hover:text-gold transition-colors">
+          <Link href="/" className="flex items-center gap-2 group shrink-0">
+            <Image 
+              src="/images/erika/ig-17.jpg" 
+              alt="Esthetics By Erika" 
+              width={35} 
+              height={35}
+              className="rounded-full object-cover"
+            />
+            <span className="font-heading text-xl text-brown-dark group-hover:text-gold transition-colors">
               Esthetics
             </span>
           </Link>
