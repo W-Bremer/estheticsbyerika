@@ -1,4 +1,4 @@
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 interface ReviewCardProps {
   name: string;
@@ -16,39 +16,36 @@ export default function ReviewCard({
   date,
 }: ReviewCardProps) {
   return (
-    <div className="bg-white rounded-2xl p-8 border border-highlight/30 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
-      {/* Quote icon */}
-      <Quote size={28} className="text-primary/20 mb-4" />
-
+    <div className="bg-white rounded-2xl p-8 border border-beige/40 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
       {/* Stars */}
-      <div className="flex gap-1 mb-4">
+      <div className="flex gap-0.5 mb-5">
         {Array.from({ length: 5 }).map((_, i) => (
           <Star
             key={i}
-            size={16}
+            size={14}
             className={
               i < rating
-                ? "text-primary fill-primary"
-                : "text-highlight fill-highlight"
+                ? "text-gold fill-gold"
+                : "text-beige fill-beige"
             }
           />
         ))}
       </div>
 
-      {/* Review text */}
-      <p className="text-accent/70 text-sm leading-relaxed flex-1 italic">
+      {/* Review text — serif italic for elegance */}
+      <p className="font-heading text-lg text-brown-dark leading-relaxed flex-1">
         &ldquo;{review}&rdquo;
       </p>
 
       {/* Reviewer info */}
-      <div className="mt-6 pt-4 border-t border-highlight/30 flex items-center justify-between">
+      <div className="mt-6 pt-5 border-t border-dashed border-beige/60 flex items-center justify-between">
         <div>
-          <p className="font-semibold text-accent text-sm">{name}</p>
+          <p className="font-semibold text-brown-dark text-sm">{name}</p>
           {date && (
-            <p className="text-accent/40 text-xs mt-0.5">{date}</p>
+            <p className="text-brown-dark/40 text-xs mt-0.5">{date}</p>
           )}
         </div>
-        <span className="text-xs font-medium text-accent/40 bg-secondary px-3 py-1 rounded-full">
+        <span className="text-xs font-medium text-brown-dark/40 bg-cream px-3 py-1 rounded-full">
           {source}
         </span>
       </div>

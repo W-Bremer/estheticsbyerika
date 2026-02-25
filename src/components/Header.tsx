@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -20,7 +20,7 @@ export default function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -30,63 +30,53 @@ export default function Header() {
   }, [pathname]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 pt-4">
+      <div
+        className={`max-w-6xl mx-auto transition-all duration-500 rounded-full border ${
+          scrolled
+            ? "bg-white/95 backdrop-blur-md shadow-lg border-beige/50"
+            : "bg-cream/90 backdrop-blur-sm border-beige/30"
+        }`}
+      >
+        <div className="flex items-center justify-between h-16 px-6 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="flex flex-col group">
-            <span className="font-heading text-2xl font-bold text-primary tracking-wide group-hover:text-primary-dark transition-colors">
+          <Link href="/" className="flex items-baseline gap-1.5 group shrink-0">
+            <span className="font-heading text-2xl text-brown-dark group-hover:text-gold transition-colors">
               Esthetics
-            </span>
-            <span className="font-heading text-sm text-accent/70 -mt-1 tracking-[0.2em] uppercase">
-              by Erika Hawthorne
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium tracking-wide uppercase transition-colors duration-200 hover:text-primary ${
+                className={`text-[13px] font-medium tracking-wide transition-colors duration-200 ${
                   pathname === link.href
-                    ? "text-primary border-b-2 border-primary pb-1"
-                    : "text-accent/80"
+                    ? "text-gold"
+                    : "text-brown-dark/70 hover:text-brown-dark"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
+          </nav>
+
+          {/* CTA + Mobile toggle */}
+          <div className="flex items-center gap-3">
             <Link
               href="/booking"
-              className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide uppercase hover:bg-primary-dark transition-all duration-200 hover:shadow-lg hover:shadow-primary/25"
+              className="hidden sm:inline-flex items-center justify-center bg-brown-dark text-cream px-6 py-2 rounded-full text-[13px] font-semibold tracking-wide hover:bg-brown transition-colors duration-200"
             >
               Book Now
             </Link>
-          </nav>
-
-          {/* Mobile: phone + hamburger */}
-          <div className="flex items-center gap-3 lg:hidden">
-            <a
-              href="tel:+14177662102"
-              className="p-2 text-primary hover:bg-primary/10 rounded-full transition-colors"
-              aria-label="Call us"
-            >
-              <Phone size={20} />
-            </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-accent hover:text-primary transition-colors"
+              className="lg:hidden p-2 text-brown-dark hover:text-gold transition-colors rounded-full"
               aria-label="Toggle menu"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
@@ -94,16 +84,16 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-white border-t border-highlight/50 animate-slide-down">
-          <nav className="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-1">
+        <div className="lg:hidden mt-2 mx-auto max-w-6xl bg-white rounded-2xl border border-beige/50 shadow-xl animate-slide-down overflow-hidden">
+          <nav className="p-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`py-3 px-4 text-base font-medium rounded-lg transition-colors ${
+                className={`py-3 px-4 text-base font-medium rounded-xl transition-colors ${
                   pathname === link.href
-                    ? "text-primary bg-secondary"
-                    : "text-accent/80 hover:text-primary hover:bg-secondary/50"
+                    ? "text-gold bg-cream"
+                    : "text-brown-dark/80 hover:text-gold hover:bg-cream/50"
                 }`}
               >
                 {link.label}
@@ -111,7 +101,7 @@ export default function Header() {
             ))}
             <Link
               href="/booking"
-              className="mt-3 bg-primary text-white text-center py-3 rounded-full font-semibold tracking-wide uppercase hover:bg-primary-dark transition-colors"
+              className="mt-2 bg-brown-dark text-cream text-center py-3 rounded-full font-semibold tracking-wide hover:bg-brown transition-colors"
             >
               Book Now
             </Link>

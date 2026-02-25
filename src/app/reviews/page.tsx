@@ -36,9 +36,9 @@ const googleReviews = [
     date: "1 week ago",
   },
   {
-    name: "Brittany L.",
+    name: "Cassie",
     review:
-      "I was so nervous for my first wax but Erika made the whole experience comfortable and quick. She's the sweetest person and does amazing work. Highly recommend!",
+      "Erika is incredible at what she does! I was nervous about getting my eyebrows done, but she made me feel completely at ease. My brows have never looked better!",
     rating: 5,
     source: "Google" as const,
     date: "3 weeks ago",
@@ -138,12 +138,12 @@ export default function ReviewsPage() {
       />
 
       {/* Rating Summary */}
-      <section className="py-16 bg-white border-b border-highlight/30">
+      <section className="py-16 bg-cream border-b border-beige/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {/* Google */}
-            <div className="text-center p-8 bg-secondary rounded-2xl">
-              <p className="text-accent/50 text-sm font-medium uppercase tracking-wider mb-2">
+            <div className="text-center p-8 bg-white rounded-2xl border border-beige/30">
+              <p className="text-brown-dark/40 text-sm font-medium uppercase tracking-wider mb-2">
                 Google Reviews
               </p>
               <div className="flex items-center justify-center gap-1 mb-2">
@@ -151,17 +151,17 @@ export default function ReviewsPage() {
                   <Star
                     key={i}
                     size={24}
-                    className="text-primary fill-primary"
+                    className="text-gold fill-gold"
                   />
                 ))}
               </div>
-              <p className="font-heading text-4xl font-bold text-accent">5.0</p>
-              <p className="text-accent/50 text-sm mt-1">16 Reviews</p>
+              <p className="font-heading text-4xl text-brown-dark">5.0</p>
+              <p className="text-brown-dark/40 text-sm mt-1">16 Reviews</p>
             </div>
 
             {/* Facebook */}
-            <div className="text-center p-8 bg-secondary rounded-2xl">
-              <p className="text-accent/50 text-sm font-medium uppercase tracking-wider mb-2">
+            <div className="text-center p-8 bg-white rounded-2xl border border-beige/30">
+              <p className="text-brown-dark/40 text-sm font-medium uppercase tracking-wider mb-2">
                 Facebook Reviews
               </p>
               <div className="flex items-center justify-center gap-1 mb-2">
@@ -169,21 +169,21 @@ export default function ReviewsPage() {
                   <Star
                     key={i}
                     size={24}
-                    className="text-primary fill-primary"
+                    className="text-gold fill-gold"
                   />
                 ))}
               </div>
-              <p className="font-heading text-4xl font-bold text-accent">5.0</p>
-              <p className="text-accent/50 text-sm mt-1">9 Reviews</p>
+              <p className="font-heading text-4xl text-brown-dark">5.0</p>
+              <p className="text-brown-dark/40 text-sm mt-1">9 Reviews</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Google Reviews */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-2xl sm:text-3xl font-bold text-accent mb-10">
+          <h2 className="font-heading text-2xl sm:text-3xl text-brown-dark mb-10">
             Google Reviews
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -195,9 +195,9 @@ export default function ReviewsPage() {
       </section>
 
       {/* Facebook Reviews */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-2xl sm:text-3xl font-bold text-accent mb-10">
+          <h2 className="font-heading text-2xl sm:text-3xl text-brown-dark mb-10">
             Facebook Reviews
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -209,17 +209,17 @@ export default function ReviewsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-accent text-center">
+      <section className="py-24 bg-brown text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white">
-            Join Our Happy Clients
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-cream">
+            Join our happy <span className="italic text-gold">clients</span>
           </h2>
-          <p className="mt-4 text-white/70 text-lg">
+          <p className="mt-5 text-cream/60 text-lg">
             Experience the 5-star service everyone is raving about.
           </p>
           <Link
             href="/booking"
-            className="inline-flex items-center gap-2 mt-8 bg-primary text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-primary-dark transition-all duration-300"
+            className="inline-flex items-center gap-2 mt-10 bg-gold text-brown-dark px-10 py-4 rounded-full text-lg font-semibold hover:bg-gold-light transition-all duration-300"
           >
             Book Your Appointment
             <ArrowRight size={20} />

@@ -15,7 +15,7 @@ const serviceCategories = [
     title: "Waxing — Bikini & Brazilian",
     description:
       "Premium hard wax for a smooth, comfortable experience. Our waxing services are designed to minimize discomfort while delivering long-lasting, silky results.",
-    image: "/images/service-wax.jpg",
+    image: "/images/erika/ig-13.jpg",
     services: [
       {
         name: "Brazilian Wax",
@@ -43,7 +43,7 @@ const serviceCategories = [
     title: "Lash Services",
     description:
       "Wake up with beautiful, lifted lashes every morning. Our lash services enhance your natural lashes for weeks of effortless beauty.",
-    image: "/images/service-lash.jpg",
+    image: "/images/erika/ig-02.jpg",
     services: [
       {
         name: "Lash Lift",
@@ -71,7 +71,7 @@ const serviceCategories = [
     title: "Brow Services",
     description:
       "Achieve those perfectly shaped, fluffy brows. From precision waxing to lamination, we'll frame your face beautifully.",
-    image: "/images/service-brow.jpg",
+    image: "/images/erika/ig-14.jpg",
     services: [
       {
         name: "Brow Wax",
@@ -99,7 +99,7 @@ const serviceCategories = [
     title: "Face & Skin Treatments",
     description:
       "Customized treatments targeting your unique skin concerns. From deep-cleansing facials to advanced dermaplaning and chemical peels.",
-    image: "/images/service-facial.jpg",
+    image: "/images/erika/ig-11.jpg",
     services: [
       {
         name: "Facial",
@@ -152,24 +152,24 @@ export default function ServicesPage() {
       />
 
       {/* Zigzag Service Sections */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ServicePageLayout sections={serviceCategories} />
         </div>
       </section>
 
       {/* Additional Services Grid */}
-      <section className="py-24 bg-secondary">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-primary text-sm font-semibold tracking-[0.2em] uppercase">
+            <span className="text-gold text-sm font-semibold tracking-[0.25em] uppercase">
               More Options
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-accent mt-3">
-              Additional Services
+            <h2 className="font-heading text-3xl sm:text-4xl text-brown-dark mt-3">
+              Additional <span className="italic">services</span>
             </h2>
-            <p className="mt-4 text-accent/60 leading-relaxed">
-              We offer a wide range of body waxing and treatments. 
+            <p className="mt-4 text-brown-dark/60 leading-relaxed">
+              We offer a wide range of body waxing and treatments.
               Don&apos;t see what you need? Just ask!
             </p>
           </div>
@@ -178,15 +178,15 @@ export default function ServicesPage() {
             {additionalServices.map((service) => (
               <div
                 key={service.name}
-                className="bg-white rounded-xl p-6 border border-highlight/30 hover:border-primary/20 hover:shadow-md transition-all duration-200 flex items-start justify-between gap-4"
+                className="bg-cream rounded-xl p-6 border border-beige/30 hover:border-gold/30 hover:shadow-md transition-all duration-200 flex items-start justify-between gap-4"
               >
                 <div>
-                  <h4 className="font-semibold text-accent">{service.name}</h4>
-                  <p className="text-accent/50 text-sm mt-1">
+                  <h4 className="font-semibold text-brown-dark">{service.name}</h4>
+                  <p className="text-brown-dark/50 text-sm mt-1">
                     {service.description}
                   </p>
                 </div>
-                <span className="font-heading text-lg font-bold text-primary whitespace-nowrap">
+                <span className="font-heading text-xl text-gold whitespace-nowrap">
                   {service.price}
                 </span>
               </div>
@@ -196,17 +196,17 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-accent text-center">
+      <section className="py-24 bg-brown text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white">
-            Ready to Book?
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-cream">
+            Ready to <span className="italic text-gold">book?</span>
           </h2>
-          <p className="mt-4 text-white/70 text-lg">
+          <p className="mt-5 text-cream/60 text-lg">
             Choose your service and pick a time that works for you.
           </p>
           <Link
             href="/booking"
-            className="inline-flex items-center gap-2 mt-8 bg-primary text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-primary-dark transition-all duration-300"
+            className="inline-flex items-center gap-2 mt-10 bg-gold text-brown-dark px-10 py-4 rounded-full text-lg font-semibold hover:bg-gold-light transition-all duration-300"
           >
             Book Now
             <ArrowRight size={20} />
