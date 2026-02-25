@@ -88,8 +88,8 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/erika/ig-11.jpg"
-            alt="Beautiful brows and lashes - Esthetics By Erika"
+            src="/images/hero-spa.jpg"
+            alt="Luxury spa ambiance - Esthetics By Erika"
             fill
             priority
             className="object-cover"
